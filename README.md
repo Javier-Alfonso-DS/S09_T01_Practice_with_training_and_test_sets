@@ -13,4 +13,3 @@ Apply some transformation process (standardize numerical data, create dummy colu
 
 Level 3 - Exercise 3
 Summarize the new columns generated in a statistical and graphical way.
-
