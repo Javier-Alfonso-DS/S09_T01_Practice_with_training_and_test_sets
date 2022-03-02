@@ -10,13 +10,12 @@ def df_info(par_df):
     print("[-------------------------INFO-------------------------]")
     display(par_df.info())
     print("[-----------------------DESCRIBE-----------------------]")
-    display(par_df.describe(include='all').round(2))
+    display(par_df.describe(include='all',datetime_is_numeric=True).round(2))
     print("[------------------------NaN's-------------------------]")
     list_cols = par_df.columns
     display(par_df[list_cols].isnull().sum())
     print("[--------------Values in categorical variables---------]")
-    list_num_cols = par_df._get_numeric_data().columns
-    list_cat_cols = list(set(list_cols) - set(list_num_cols))
+    list_cat_cols = par_df.select_dtypes(include= object , exclude=None)
     for i in list_cat_cols:
         print("------------------%s-------------------" %i)
         print("------------Unique Values--------------")
